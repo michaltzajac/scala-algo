@@ -11,14 +11,14 @@ import scala.util.Random
  */
 class StdRandom(seed: Long) {
   def this() = this(System.currentTimeMillis)
-  
+
   val random = new Random(seed)
-  
-  def intRange(numberOfInts: Int, fromRange: Int, toRange: Int) = {
+
+  def intRange(numberOfInts: Int, fromRange: Int, toRange: Int): Array[Int] = {
     assert(fromRange < toRange, "Invalid range")
     val range: Inclusive = fromRange to toRange
-    
-    val randomNumbers = for(cnt <- 0 until numberOfInts) yield range(random.nextInt(range.size))
+
+    val randomNumbers = for (cnt <- 0 until numberOfInts) yield range(random.nextInt(range.size))
     randomNumbers.toArray
   }
 }

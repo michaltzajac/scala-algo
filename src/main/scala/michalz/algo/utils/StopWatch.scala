@@ -8,10 +8,10 @@ import java.time.{Instant, Duration}
  */
 class StopWatch {
   val startTime = Instant.now
-  
-  def elapsedTime = Duration.between(startTime, Instant.now)
+
+  def elapsedTime: Duration = Duration.between(startTime, Instant.now)
 }
 
 object StopWatch {
-  def start = new StopWatch
+  def start: StopWatch = new StopWatch
 }
