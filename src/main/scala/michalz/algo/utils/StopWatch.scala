@@ -1,17 +1,15 @@
 package michalz.algo.utils
 
-import java.time
-import java.time.{Duration, Instant}
+import java.time.{Instant, Duration}
 
 /**
- * Created by michal on 27.11.14.
+ * @author mzajac
+ * @since 2014.11.27
  */
 class StopWatch {
-  val startTime = Instant.now()
-
-  def elapsedTime = {
-    Duration.between(startTime, Instant.now)
-  }
+  val startTime = Instant.now
+  
+  def elapsedTime = Duration.between(startTime, Instant.now)
 }
 
 object StopWatch {

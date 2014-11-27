@@ -1,16 +1,15 @@
 package michalz.algo.utils
 
-import org.scalatest.{Matchers, FunSuite}
-import org.scalatest.matchers.Matcher
-
-import scala.Array
+import org.scalatest.{Matchers, FunSuite, FunSpec}
 
 /**
- * Created by michal on 26.11.14.
+ * @author mzajac
+ * @since 2014.11.27
  */
 class FileUtilsSpec extends FunSuite with Matchers {
-  test("FileUtils should read array of integer from file"){
-    val numbers = FileUtils.readInts("src/test/resources/michalz/algo/utils/arrayOfInts.txt")
-    numbers should be (Array(1, 2, 7, 12, 4, -6))
+  
+  test("FileUtils should read array of ints from file") {
+    val intArray: Array[Int] = FileUtils.readIntsFromFile("src/test/resources/michalz/algo/utils/intsFile.txt")
+    intArray should be (Array(-7, 22, 4, -12))
   }
 }

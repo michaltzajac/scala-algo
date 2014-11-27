@@ -3,11 +3,12 @@ package michalz.algo.utils
 import scala.io.Source
 
 /**
- * Created by michal on 26.11.14.
+ * @author mzajac
+ * @since 2014.11.27
  */
 object FileUtils {
 
-  def readInts(fileName: String) = {
-    Source.fromFile(fileName).getLines().map(_.trim.toInt).toArray
+  def readIntsFromFile(fileName: String): Array[Int] = {
+    Source.fromFile(fileName).getLines.map(_.trim).filter(!_.isEmpty).map(_.toInt).toArray
   }
 }
